@@ -15,7 +15,13 @@ struct ListImagesUseCase: IListImagesUseCase {
     let gateway: ImageGateway
     
     func execute(completion: @escaping (Result<[Image], Error>) -> Void) {
-        gateway.list(completion: completion)
+        gateway.list { result in
+            do {
+                try completion(.success(result.get().reversed()))
+            } catch {
+                completion(.failure(error))
+            }
+        }
     }
 
 }

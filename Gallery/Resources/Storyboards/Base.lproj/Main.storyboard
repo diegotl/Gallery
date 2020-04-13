@@ -71,6 +71,9 @@
                                     <constraint firstAttribute="width" secondItem="VRh-IZ-LfA" secondAttribute="height" multiplier="1:1" id="sef-HJ-Tqx"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="O15-Vh-VxG">
+                                <rect key="frame" x="169" y="169" width="37" height="37"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVV-7R-zGZ">
                                 <rect key="frame" x="16" y="607" width="343" height="44"/>
                                 <constraints>
@@ -101,6 +104,8 @@
                             <constraint firstItem="MZX-bv-P2w" firstAttribute="trailing" secondItem="1jN-B7-fZH" secondAttribute="trailing" constant="16" id="Vdo-LN-ERj"/>
                             <constraint firstItem="1jN-B7-fZH" firstAttribute="leading" secondItem="MZX-bv-P2w" secondAttribute="leading" constant="16" id="XKC-N2-4pu"/>
                             <constraint firstItem="MZX-bv-P2w" firstAttribute="trailing" secondItem="VRh-IZ-LfA" secondAttribute="trailing" constant="16" id="dVX-dZ-s9d"/>
+                            <constraint firstItem="O15-Vh-VxG" firstAttribute="centerX" secondItem="VRh-IZ-LfA" secondAttribute="centerX" id="lK6-gl-h1m"/>
+                            <constraint firstItem="O15-Vh-VxG" firstAttribute="centerY" secondItem="VRh-IZ-LfA" secondAttribute="centerY" id="rge-Of-w4i"/>
                             <constraint firstItem="MZX-bv-P2w" firstAttribute="bottom" secondItem="OVV-7R-zGZ" secondAttribute="bottom" constant="16" id="uP7-MK-Sba"/>
                             <constraint firstItem="VRh-IZ-LfA" firstAttribute="leading" secondItem="MZX-bv-P2w" secondAttribute="leading" constant="16" id="xWl-wr-zcB"/>
                         </constraints>
@@ -108,6 +113,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="VRh-IZ-LfA" id="7Cd-4e-Pog"/>
+                        <outlet property="loadingView" destination="O15-Vh-VxG" id="ufK-0J-dTQ"/>
                         <outlet property="rotateButton" destination="1jN-B7-fZH" id="GS0-BJ-XqO"/>
                         <outlet property="uploadButton" destination="OVV-7R-zGZ" id="vLG-vN-ue2"/>
                     </connections>

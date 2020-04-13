@@ -18,16 +18,20 @@ class EditorViewController: UIViewController, IEditorView {
     var configurator: IEditorConfigurator!
     var presenter: IEditorPresenter!
     
+    @IBOutlet private weak var loadingView: UIActivityIndicatorView!
+    
     private var state: EditorViewState = .editing {
         didSet {
             switch state {
             case .editing:
+                loadingView.stopAnimating()
                 imageView.alpha = 1.0
                 rotateButton.isEnabled = true
                 uploadButton.isEnabled = true
                 
             case .uploading:
-                imageView.alpha = 0.7
+                loadingView.startAnimating()
+                imageView.alpha = 0.5
                 rotateButton.isEnabled = false
                 uploadButton.isEnabled = false
             }
@@ -57,6 +61,18 @@ class EditorViewController: UIViewController, IEditorView {
         self.state = state
     }
     
+    func flipImage(newAngle: Float) {
+        UIView.animate(withDuration: 0.5) {
+            self.imageView.transform = CGAffineTransform(rotationAngle: CGFloat(newAngle))
+        }
+    }
+    
+    func show(error: Error) {
+        let alertController = UIAlertController(title: "Ooops!", message: error.localizedDescription, preferredStyle: .alert)
+        alertController.addAction(.init(title: "OK", style: .default, handler: nil))
+        present(alertController, animated: true)
+    }
+    
     func pop() {
         navigationController?.popViewController(animated: true)
     }
@@ -64,7 +80,7 @@ class EditorViewController: UIViewController, IEditorView {
     // MARK: - Actions
     
     @IBAction private func rotateImage() {
-        
+        presenter.rotate()
     }
     
     @IBAction private func uploadImage() {

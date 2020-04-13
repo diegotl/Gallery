@@ -8,12 +8,15 @@
 
 protocol IEditorView: class {
     func set(state: EditorViewState)
+    func flipImage(newAngle: Float)
+    func show(error: Error)
     func pop()
 }
 
 protocol IEditorPresenter {
     var image: LocalImage { get }
     
+    func rotate()
     func upload()
 }
 
@@ -38,18 +41,22 @@ class EditorPresenter: IEditorPresenter {
         self.image = image
     }
     
+    func rotate() {
+        view?.flipImage(newAngle: image.rotate())
+    }
+    
     func upload() {
         view?.set(state: .uploading)
         
         uploadImageUseCase.execute(image: image) { result in
+            self.view?.set(state: .editing)
+            
             do {
                 _ = try result.get()
-                self.view?.set(state: .editing)
                 self.view?.pop()
                 self.delegate?.reloadList()
             } catch {
-                //handle error
-                print("aa")
+                self.view?.show(error: error)
             }
         }
     }

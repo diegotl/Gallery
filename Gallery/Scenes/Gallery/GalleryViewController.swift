@@ -82,36 +82,33 @@ class GalleryViewController: UICollectionViewController, IGalleryView {
     
     @objc private func uploadPhoto() {
         let actionSheet = UIAlertController(title: "Upload Photo", message: nil, preferredStyle: .actionSheet)
-        actionSheet.addAction(.init(title: "From Camera", style: .default, handler: { _ in
-            self.presentCameraPicker()
+        actionSheet.addAction(UIAlertAction(title: "From Camera", style: .default, handler: { _ in
+            self.presentPicker(for: .camera)
         }))
         
-        actionSheet.addAction(.init(title: "From Photo Library", style: .default, handler: { _ in
-            
+        actionSheet.addAction(UIAlertAction(title: "From Photo Library", style: .default, handler: { _ in
+            self.presentPicker(for: .photoLibrary)
         }))
         
         actionSheet.addAction(.init(title: "Cancel", style: .destructive, handler: nil))
         present(actionSheet, animated: true)
     }
     
-    private func presentCameraPicker() {
-        PhotoAccessHelper.requestCameraAccess { result in
+    private func presentPicker(for sourceType: UIImagePickerController.SourceType) {
+        PhotoAccessHelper.requestAccess { result in
             do {
                 _ = try result.get()
-                self.presentPicker(for: .camera)
+                DispatchQueue.main.async {
+                    let imagePicker = UIImagePickerController()
+                    imagePicker.sourceType = sourceType
+                    imagePicker.allowsEditing = true
+                    imagePicker.delegate = self
+                    self.present(imagePicker, animated: true)
+                }
+                
             } catch {
                 self.show(errorMessage: error.localizedDescription)
             }
-        }
-    }
-    
-    private func presentPicker(for sourceType: UIImagePickerController.SourceType) {
-        DispatchQueue.main.async {
-            let imagePicker = UIImagePickerController()
-            imagePicker.sourceType = sourceType
-            imagePicker.allowsEditing = true
-            imagePicker.delegate = self
-            self.present(imagePicker, animated: true)
         }
     }
     
@@ -141,7 +138,8 @@ class GalleryViewController: UICollectionViewController, IGalleryView {
 extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        let screenWidth = UIScreen.main.bounds.width
+        return CGSize(width: screenWidth/3.3, height: screenWidth/3.3)
     }
     
 }

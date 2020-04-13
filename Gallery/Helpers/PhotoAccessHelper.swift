@@ -7,6 +7,7 @@
 //
 
 import AVFoundation
+import UIKit
 
 enum PhotoAccess: LocalizedError {
     case denied
@@ -24,7 +25,7 @@ enum PhotoAccess: LocalizedError {
 
 class PhotoAccessHelper {
     
-    static func requestCameraAccess(handler: @escaping (Result<Bool, PhotoAccess>) -> Void) {
+    static func requestAccess(handler: @escaping (Result<Bool, PhotoAccess>) -> Void) {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .notDetermined:
             AVCaptureDevice.requestAccess(for: .video) { granted in

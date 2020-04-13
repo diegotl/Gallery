@@ -38,6 +38,7 @@
 		3FB42D2B2444EADB00856756 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB42D2A2444EADB00856756 /* Storyboard.swift */; };
 		3FB42D2D2444EBC600856756 /* LocalImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB42D2C2444EBC600856756 /* LocalImage.swift */; };
 		3FB42D312444F04D00856756 /* UploadImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB42D302444F04D00856756 /* UploadImageUseCase.swift */; };
+		3FB42D3324450B6F00856756 /* UIImage+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB42D3224450B6F00856756 /* UIImage+Rotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		3FB42D2A2444EADB00856756 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		3FB42D2C2444EBC600856756 /* LocalImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalImage.swift; sourceTree = "<group>"; };
 		3FB42D302444F04D00856756 /* UploadImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageUseCase.swift; sourceTree = "<group>"; };
+		3FB42D3224450B6F00856756 /* UIImage+Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Rotation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			children = (
 				3FB42D1C2444C3CD00856756 /* UIImageView+Url.swift */,
 				3FB42D2A2444EADB00856756 /* Storyboard.swift */,
+				3FB42D3224450B6F00856756 /* UIImage+Rotation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				3FB42D0724446D1300856756 /* APIImageGateway.swift in Sources */,
 				3FB42CF624446D1300856756 /* GatewayFactory.swift in Sources */,
 				3FB42D0424446D1300856756 /* Requests.swift in Sources */,
+				3FB42D3324450B6F00856756 /* UIImage+Rotation.swift in Sources */,
 				3FB42D1024446DE000856756 /* Image.swift in Sources */,
 				3FB42D122444716200856756 /* APIResponse.swift in Sources */,
 				3FB42CAE24446C6A00856756 /* AppDelegate.swift in Sources */,

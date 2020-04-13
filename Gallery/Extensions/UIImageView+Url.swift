@@ -13,10 +13,8 @@ extension UIImageView {
     static private let cache = NSCache<NSString, UIImage>()
     
     func loadImage(from imageURL: String, loading: @escaping (Bool) -> Void) {
-        guard let url = URL(string: imageURL) else {
-            image = nil
-            return
-        }
+        guard let url = URL(string: imageURL) else { return }
+        image = nil
         
         if let cachedImage = UIImageView.cache.object(forKey: imageURL as NSString) {
             image = cachedImage
