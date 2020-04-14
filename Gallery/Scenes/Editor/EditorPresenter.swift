@@ -21,7 +21,7 @@ protocol IEditorPresenter {
 }
 
 protocol EditorDelegate: class {
-    func reloadList()
+    func loadImages()
 }
 
 class EditorPresenter: IEditorPresenter {
@@ -54,7 +54,7 @@ class EditorPresenter: IEditorPresenter {
             do {
                 _ = try result.get()
                 self.view?.pop()
-                self.delegate?.reloadList()
+                self.delegate?.loadImages()
             } catch {
                 self.view?.show(error: error)
             }

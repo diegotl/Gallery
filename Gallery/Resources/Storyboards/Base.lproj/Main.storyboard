@@ -76,20 +76,38 @@
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVV-7R-zGZ">
                                 <rect key="frame" x="16" y="607" width="343" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="qzd-SX-TaT"/>
                                 </constraints>
-                                <state key="normal" title="Upload"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Upload">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="uploadImage" destination="pZd-jI-VWW" eventType="touchUpInside" id="6p5-Q6-Ts9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jN-B7-fZH">
-                                <rect key="frame" x="16" y="547" width="343" height="44"/>
+                                <rect key="frame" x="16" y="555" width="343" height="44"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Qpf-hC-zkf"/>
                                 </constraints>
-                                <state key="normal" title="Rotate"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Rotate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="rotateImage" destination="pZd-jI-VWW" eventType="touchUpInside" id="pre-Rf-Qdv"/>
                                 </connections>
@@ -98,7 +116,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="VRh-IZ-LfA" firstAttribute="top" secondItem="MZX-bv-P2w" secondAttribute="top" constant="16" id="3Ef-jT-0bq"/>
-                            <constraint firstItem="OVV-7R-zGZ" firstAttribute="top" secondItem="1jN-B7-fZH" secondAttribute="bottom" constant="16" id="8Ls-sd-zcB"/>
+                            <constraint firstItem="OVV-7R-zGZ" firstAttribute="top" secondItem="1jN-B7-fZH" secondAttribute="bottom" constant="8" id="8Ls-sd-zcB"/>
                             <constraint firstItem="MZX-bv-P2w" firstAttribute="trailing" secondItem="OVV-7R-zGZ" secondAttribute="trailing" constant="16" id="LyI-FK-3Dm"/>
                             <constraint firstItem="OVV-7R-zGZ" firstAttribute="leading" secondItem="MZX-bv-P2w" secondAttribute="leading" constant="16" id="VUp-HA-I93"/>
                             <constraint firstItem="MZX-bv-P2w" firstAttribute="trailing" secondItem="1jN-B7-fZH" secondAttribute="trailing" constant="16" id="Vdo-LN-ERj"/>

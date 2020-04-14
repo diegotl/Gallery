@@ -1,0 +1,9 @@
+{
+  "data": {
+    "error": "This is a test error message",
+    "request": "\/3\/image",
+    "method": "POST"
+  },
+  "success": false,
+  "status": 400
+}

@@ -15,7 +15,7 @@ enum Endpoints: APIEndpointPath {
     var value: String {
         switch self {
         case .listImages:
-            return "/album/KufolmV/images"
+            return "/album/ujvXsTi/images"
         case .uploadImage:
             return "/image"
         }

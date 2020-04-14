@@ -25,15 +25,13 @@ class EditorViewController: UIViewController, IEditorView {
             switch state {
             case .editing:
                 loadingView.stopAnimating()
-                imageView.alpha = 1.0
-                rotateButton.isEnabled = true
-                uploadButton.isEnabled = true
+                [imageView, rotateButton, uploadButton].forEach({ $0?.alpha = 1.0 })
+                [rotateButton, uploadButton].forEach({ $0?.isEnabled = true })
                 
             case .uploading:
                 loadingView.startAnimating()
-                imageView.alpha = 0.5
-                rotateButton.isEnabled = false
-                uploadButton.isEnabled = false
+                [imageView, rotateButton, uploadButton].forEach({ $0?.alpha = 0.5 })
+                [rotateButton, uploadButton].forEach({ $0?.isEnabled = false })
             }
         }
     }

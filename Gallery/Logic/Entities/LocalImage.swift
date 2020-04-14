@@ -14,7 +14,7 @@ enum LocalImageError: Error {
 
 class LocalImage: Codable {
     let image: UIImage
-    let album: String = "g0MVzI3vYIrxV6q"
+    let album: String = "7AXoQX9AfISyrXh"
     var angle: Float = 0
     
     enum CodingKeys: String, CodingKey {

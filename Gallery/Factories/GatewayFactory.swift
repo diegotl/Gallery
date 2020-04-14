@@ -14,7 +14,7 @@ struct GatewayFactory {
 
 struct APIGatewayFactory {
     
-    private var apiClient: APIClient = APIClient(strategy: APIDefaultStrategy(), adapters: [AuthAdapter()])
+    private var apiClient: APIClient = APIClient(strategy: APIImgurStrategy(), adapters: [AuthAdapter()])
     
     var image: ImageGateway {
         return APIImageGateway(apiClient: apiClient)

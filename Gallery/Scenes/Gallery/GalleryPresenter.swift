@@ -45,9 +45,5 @@ class GalleryPresenter: IGalleryPresenter, EditorDelegate {
     func presentEditor(for image: LocalImage) {
         editorViewRouter.navigateTo(with: image, delegate: self)
     }
-    
-    func reloadList() {
-        loadImages()
-    }
 
 }

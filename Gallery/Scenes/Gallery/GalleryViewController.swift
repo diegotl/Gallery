@@ -37,6 +37,7 @@ class GalleryViewController: UICollectionViewController, IGalleryView {
                 refreshControl.endRefreshing()
                 let errorLabel = UILabel()
                 errorLabel.text = error.localizedDescription
+                errorLabel.textAlignment = .center
                 collectionView.backgroundView = errorLabel
             }
             
@@ -96,18 +97,18 @@ class GalleryViewController: UICollectionViewController, IGalleryView {
     
     private func presentPicker(for sourceType: UIImagePickerController.SourceType) {
         PhotoAccessHelper.requestAccess { result in
-            do {
-                _ = try result.get()
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                do {
+                    _ = try result.get()
                     let imagePicker = UIImagePickerController()
                     imagePicker.sourceType = sourceType
                     imagePicker.allowsEditing = true
                     imagePicker.delegate = self
                     self.present(imagePicker, animated: true)
+                    
+                } catch {
+                    self.show(errorMessage: error.localizedDescription)
                 }
-                
-            } catch {
-                self.show(errorMessage: error.localizedDescription)
             }
         }
     }
@@ -137,9 +138,13 @@ class GalleryViewController: UICollectionViewController, IGalleryView {
 
 extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: 8, left: 8, bottom: 8, right: 8)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let screenWidth = UIScreen.main.bounds.width
-        return CGSize(width: screenWidth/3.3, height: screenWidth/3.3)
+        let screenWidth = UIScreen.main.bounds.width - (6 * 8)
+        return CGSize(width: screenWidth/3, height: screenWidth/3)
     }
     
 }
