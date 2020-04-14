@@ -5,6 +5,9 @@ This is the Spark Networks Coding Challenge about having an image gallery with t
 The only external framework linked is [APIClient](https://github.com/diegotl/APIClient), which was made by myself and is open sourced. It's just a lightweight API Client.
 The test target is also liked to [OHHTTPStubs](https://github.com/AliSoftware/OHHTTPStubs).
 
+## Backend
+The [Imgur API](https://api.imgur.com) was used for listing and uploading photos. There is a known issue: usually the service takes some seconds or minutes to process a recently uploaded picture. So probably your new photo will now appear immediately when popping to the gallery after upload. You can try pulling to refresh after a while.
+
 ## Architectures
 ### MVP
 For high level layers, MVP pattern was used, decoupling view and presentation logic, making views more reusable. Both are referenced by each other's protocol, not concrete type, improving testability.
