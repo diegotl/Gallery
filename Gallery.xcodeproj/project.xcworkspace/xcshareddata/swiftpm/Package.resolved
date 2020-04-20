@@ -14,9 +14,9 @@
         "package": "APIClient",
         "repositoryURL": "https://github.com/diegotl/APIClient.git",
         "state": {
-          "branch": "master",
-          "revision": "31dbce99b13bde760950e4041bff7b658da40929",
-          "version": null
+          "branch": null,
+          "revision": "dacd948cbe401b521f945d6f854fbc16eccd4c36",
+          "version": "1.0.0"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/diegotl/OkLog-Swift.git",
         "state": {
           "branch": null,
-          "revision": "ed0025debf9dead90a3776c5383a2303d076f46b",
-          "version": "0.2.3"
+          "revision": "fabf10914640ca5945b53d379fc4526679b2d5bc",
+          "version": "0.2.4"
         }
       },
       {

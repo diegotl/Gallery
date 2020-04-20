@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F08409F244D8EDB007109A5 /* APIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 3F08409E244D8EDB007109A5 /* APIClient */; };
 		3FB42CAE24446C6A00856756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB42CAD24446C6A00856756 /* AppDelegate.swift */; };
 		3FB42CB524446C6A00856756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB42CB324446C6A00856756 /* Main.storyboard */; };
 		3FB42CB724446C6C00856756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FB42CB624446C6C00856756 /* Assets.xcassets */; };
@@ -20,7 +21,6 @@
 		3FB42D0624446D1300856756 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB42CEF24446D1300856756 /* URLs.swift */; };
 		3FB42D0724446D1300856756 /* APIImageGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB42CF124446D1300856756 /* APIImageGateway.swift */; };
 		3FB42D0824446D1300856756 /* ImageGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB42CF324446D1300856756 /* ImageGateway.swift */; };
-		3FB42D0C24446D9300856756 /* APIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 3FB42D0B24446D9300856756 /* APIClient */; };
 		3FB42D0E24446DD400856756 /* ListImagesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB42D0D24446DD400856756 /* ListImagesUseCase.swift */; };
 		3FB42D1024446DE000856756 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB42D0F24446DE000856756 /* Image.swift */; };
 		3FB42D122444716200856756 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB42D112444716200856756 /* APIResponse.swift */; };
@@ -127,7 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FB42D0C24446D9300856756 /* APIClient in Frameworks */,
+				3F08409F244D8EDB007109A5 /* APIClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +480,7 @@
 			);
 			name = Gallery;
 			packageProductDependencies = (
-				3FB42D0B24446D9300856756 /* APIClient */,
+				3F08409E244D8EDB007109A5 /* APIClient */,
 			);
 			productName = Gallery;
 			productReference = 3FB42CAA24446C6A00856756 /* Gallery.app */;
@@ -536,8 +536,8 @@
 			);
 			mainGroup = 3FB42CA124446C6A00856756;
 			packageReferences = (
-				3FB42D0A24446D9300856756 /* XCRemoteSwiftPackageReference "APIClient" */,
 				3FB42D4724450F0200856756 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */,
+				3F08409D244D8EDB007109A5 /* XCRemoteSwiftPackageReference "APIClient" */,
 			);
 			productRefGroup = 3FB42CAB24446C6A00856756 /* Products */;
 			projectDirPath = "";
@@ -885,12 +885,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3FB42D0A24446D9300856756 /* XCRemoteSwiftPackageReference "APIClient" */ = {
+		3F08409D244D8EDB007109A5 /* XCRemoteSwiftPackageReference "APIClient" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/diegotl/APIClient.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 		3FB42D4724450F0200856756 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */ = {
@@ -904,9 +904,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3FB42D0B24446D9300856756 /* APIClient */ = {
+		3F08409E244D8EDB007109A5 /* APIClient */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3FB42D0A24446D9300856756 /* XCRemoteSwiftPackageReference "APIClient" */;
+			package = 3F08409D244D8EDB007109A5 /* XCRemoteSwiftPackageReference "APIClient" */;
 			productName = APIClient;
 		};
 		3FB42D4824450F0200856756 /* OHHTTPStubsSwift */ = {
